@@ -1,0 +1,29 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\pagestyle{fancy}
+\rhead{2131917, Page~\thepage~of~\pageref{LastPage}}
+
+\begin{document}
+\section{My Program - Tetris}
+\subsection{What is it}
+I made tetris. (Hetris). If for some reason uninitiated, this is a game where you place pieces in the order that they spawn in from the top of the screen. Try to pieces blocks so that you fill up rows. Once you fill up a row, this will add 1 point to your score and remove the row from the game. If your pieces stack up to the top of the screen and past it, you lose and will be taken to the game over screen, where you can see your final score and have the option to play again.
+\subsection{How to play}
+To start or restart the game press the spacebar. Use the arrow keys to move pieces around, and the spacebar to rotate pieces.
+\section{Architectural choices}
+\subsection{Efficiency}
+I initially stored each piece seperately in a list and rendered each of these every frame, but realised this was fairly inefficient, especially if the game was to be scaled up, as my design allows for. I instead used a vector of vectors method to create rows and blocks within those rows, and then could assign each block as 'filled' or 'empty', and then render the blocks onto the screen according to their status.
+\subsection{Dynamism}
+The main thing I had in mind throughout the project was to make sure that any of the dimensions could be changed, and the game would still work perfectly. So screen width, height, and block size can all be changed by changing their respective variables and everything will work perfectly. This, besides being cool, also meant I had to create sturdy helper functions (eg. to convert from co-ordinates to indices and back) which could work for any layouts, and this reduced the ability of bugs to crop up in my code. 
+\section{Library used - Gloss}
+I used the gloss library for this coursework, as it was one of the only options with which to make a game with, and this seemed like a more interesting and motivating challenge to do in haskell. Gloss was nice as it has a simple function in which to interact with IO, and then leaves you to create the rest of the program in your own style. It is extremely flexible.
+\section{Personal experience}
+Tough. At first, coming to grips with using Gloss and interacting with a new library was quite hard. However after a day or two of understanding how the library functioned it was much easier to write idiomatically, both for the library and haskell. Time restrictions also meant that a lot of time was put toward debugging and figuring out the cleanest way to structure code (architectural choices), rather than expanding the game and adding even more features or a nicer UI. There were times when I decided to rewrite whole parts of the code, as describe in 2.1.
+\section{Resources read (clickable links)}
+\href{https://github.com/dixonary/hake}{Hake by Dixonary}\\
+\href{https://mmhaskell.com/blog/2019/3/25/making-a-glossy-game-part-1}{Making a Glossy Game Tutorial}\\
+\href{https://blog.ocharles.org.uk/blog/posts/2014-12-04-record-wildcards.html}{Record Wildcards}\\
+\href{https://hackage.haskell.org/package/gloss}{Hackage Gloss}\\
+\href{https://hoogle.haskell.org/}{Hoogle}\\
+\end{document}
