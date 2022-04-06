@@ -50,13 +50,13 @@ newGame =
       screen = Title,
       scoreFlash = 0,
       score = 0,
-      currPiece = HLine,
+      currPiece = Square,
       rows = initialBlocks,
       currX = initialCurrX,
       currY = initialCurrY,
       pieceCount = 0,
       isRotated = False,
-      shadowPiece = HLine
+      shadowPiece = Square
     }
 
 simulationRate :: Int

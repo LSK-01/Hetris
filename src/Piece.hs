@@ -76,6 +76,7 @@ rotatePiece p = case p of
 -- We have to declare our own wrapper function for 'succ' so that we can specify a wrap around for when we get to the final value - otherwise 'succ' just fails
 nextPiece :: Piece -> Piece
 nextPiece p
+  | p == HLine90 = TBar
   | p >= TBar = Square
   | otherwise =  succ p
 
