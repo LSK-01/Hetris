@@ -1,3 +1,6 @@
-# cswk-program
+# Hetris
 
-This is the skeleton code for the second coursework in the 2022 iteration of CS141 Functional Programming at the University of Warwick.
+## Setup
+To play Hetris, clone the repository, change to the directory on your machine, and run `stack run` 
+
+## For more information see report.pdf
